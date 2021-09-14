@@ -1,0 +1,75 @@
+
+<html>
+<body>
+Q1:Is it raining? <br>
+<input type="radio" name="q1">Yes <input type="radio" name="q1" id="q1">No
+<br>Q2:What is Pakistan's naional language?<br>
+<input type="radio" name="q2"> Punjabi <input type="radio" name="q2"> Pashto
+<input type="radio" name="q2" id="q2"> Urdu <input type="radio" name="q2"> English
+<br>Q3: What is your city name?<br>
+<input type="radio" name="q3"> Islamabad <input type="radio" name="q3" id="q3"> karachi
+<input type="radio" name="q3"> Lahore <input type="radio" name="q3"> Quetta
+<br>
+<button onclick="result();">Remarks</button>
+<script>
+function result()
+{
+var score=0;
+if(document.getElementById("q1").checked)
+score++;
+if(document.getElementById("q2").checked)
+score++;
+if(document.getElementById("q3").checked)
+score++;
+alert(score);
+var myWindow = window.open("", "Your Result", "width=200,height=200"); 
+myWindow.document.write(score);
+
+}
+</script>
+<hr>
+<input type="text" id="a1">
+<p id="rm"></p>
+<button onclick="remarks();">Remarks</button>
+<script>
+function remarks()
+{
+document.getElementById("rm").innerHTML="";
+if(document.getElementById("a1").value=="")
+document.getElementById("rm").innerHTML="Please Enter something";
+}
+</script>
+
+<hr>
+Number 1: <input type="text" id="n1"><br>
+Number 2: <input type="text" id="n2"><br>
+<br>
+Answer: <input type="text" id="ans">
+<br>
+<textarea id="txt" col="3" rows="10"></textarea>
+<button onclick="mysum();">Sum</button>
+<br>
+<script>
+function mysum()
+{
+var a=Number(document.getElementById("n1").value);
+var b=Number(document.getElementById("n2").value);
+document.getElementById("ans").value=a+b;
+for(var i=a;i<=b;i++)
+document.getElementById("txt").innerHTML+=i+"\n";
+
+}
+
+</script>
+
+<hr>
+<h1 onclick="this.innerHTML='Bye bscs5';">Hello BSCS5</h1>
+<p id="p1"></p>
+<img id="im1" src="bulbon.jpg">
+<script>
+document.getElementById("p1").innerHTML = "New text!";
+document.getElementById("p1").style.color="red";
+document.getElementById("im1").src="bulboff.jpg";
+</script>
+</body>
+</html>
